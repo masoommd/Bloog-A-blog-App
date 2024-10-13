@@ -108,7 +108,7 @@ function Header() {
                 <li>
                   <LogoutBtn/>
                 </li>
-                <button className='bg-green-500 rounded-full px-6 py-2'>{name}</button></>
+                <button className='bg-green-500 rounded-full px-6 py-2'><b>{name}</b></button></>
               )}
           </ul>
         </nav>
