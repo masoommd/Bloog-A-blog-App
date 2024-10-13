@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const authStatus = useSelector((state) => state.auth.status)
+  const name = useSelector((state) => state.auth.userData.name)
   const navigate = useNavigate()
 
   const navItems = [
@@ -35,6 +36,7 @@ function Header() {
       slug: "/add-post",
       active: authStatus
     },
+    
   ]
 
 
@@ -102,9 +104,11 @@ function Header() {
                 </li>
               ) : null )}
               {authStatus && (
+                <>
                 <li>
                   <LogoutBtn/>
                 </li>
+                <button className='bg-green-500 rounded-full px-6 py-2'>{name}</button></>
               )}
           </ul>
         </nav>
